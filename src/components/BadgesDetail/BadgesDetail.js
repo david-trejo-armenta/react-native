@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         borderWidth: 8,
         borderColor:Colors.charade,
         position: 'absolute',
-        top: 145,
+        top: 150,
         left: '21%',
     },
     userInfo:{
