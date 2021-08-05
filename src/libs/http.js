@@ -40,6 +40,10 @@ class Http {
         try {
             let request = await fetch(`${BASE_URL}/_id:${badgeId}/`, {
                   method: 'PUT',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
                   body: JSON.stringify(body),
               });
               let response = await request.json();
