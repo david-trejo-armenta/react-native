@@ -29,6 +29,14 @@ class BadgesEdit extends React.Component {
         this.props.navigation.setOptions({title: item.name});
     };
 
+    handleSubmit = async () => {
+        await Http.instance.put(
+            this.state.badge._id, 
+            this.state.form
+            );
+        this.props.navigation.replace('Badges')
+    }
+
     render() {
 
         const {badge, loading} = this.state;
@@ -48,8 +56,93 @@ class BadgesEdit extends React.Component {
         return (
                 <ScrollView style={styles.container}>
                 <View style={styles.content}>
-                    <Text>{badge.name}</Text>
-                    <TextInput style={styles.input} placeholder="This is an input"/>
+
+                    <Image
+                    style={styles.header} 
+                    source={{uri: `${badge.header_img_url}`}}
+                    />
+                    <Image
+                    style={styles.profileImage} 
+                    source={{uri: `${badge.profile_picture_url}`}}
+                    />
+
+                    <View style={styles.form}>
+                    <Text style={styles.inputText}>{badge.name}</Text>
+                    <TextInput 
+                    style={styles.input} 
+                    placeholder={`${badge.name}`}
+                    onChangeText = {text => {
+                    this.setState( prevState => {
+                        let form = Object.assign({}, prevState.form);
+                        form.name = text;
+                        return {form};
+                    })
+                    }}
+                    />
+                     <Text style={styles.inputText}>Age</Text>
+                    <TextInput 
+                    style={styles.input} 
+                    placeholder={`${badge.age}`}
+                    onChangeText = {text => {
+                    this.setState( prevState => {
+                        let form = Object.assign({}, prevState.form);
+                        form.age = text;
+                        return {form};
+                    })
+                    }}
+                    />
+                     <Text style={styles.inputText}>City</Text>
+                    <TextInput 
+                    style={styles.input} 
+                    placeholder={`${badge.city}`}
+                    onChangeText = {text => {
+                    this.setState( prevState => {
+                        let form = Object.assign({}, prevState.form);
+                        form.city = text;
+                        return {form};
+                    })
+                    }}
+                    />
+                     <Text style={styles.inputText}>Followers</Text>
+                    <TextInput 
+                    style={styles.input} 
+                    placeholder={`${badge.followers}`}
+                    onChangeText = {text => {
+                    this.setState( prevState => {
+                        let form = Object.assign({}, prevState.form);
+                        form.followers = text;
+                        return {form};
+                    })
+                    }}
+                    />
+                    <Text style={styles.inputText}>Likes</Text>
+                    <TextInput 
+                    style={styles.input} 
+                    placeholder={`${badge.likes}`}
+                    onChangeText = {text => {
+                    this.setState( prevState => {
+                        let form = Object.assign({}, prevState.form);
+                        form.likes = text;
+                        return {form};
+                    })
+                    }}
+                    />     
+                    <Text style={styles.inputText}>Posts</Text>
+                    <TextInput 
+                    style={styles.input} 
+                    placeholder={badge.post ? `${badge.post}` : '0'}
+                    onChangeText = {text => {
+                    this.setState( prevState => {
+                        let form = Object.assign({}, prevState.form);
+                        form.post = text;
+                        return {form};
+                    })
+                    }}
+                    /> 
+                    <TouchableOpacity style={styles.submit} onPress={this.handleSubmit}>
+                        <Text style={styles.submitText}>Save</Text>
+                    </TouchableOpacity>          
+                    </View>                    
                     </View>
                 </ScrollView>
         );
@@ -79,12 +172,52 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
 
     },
+    form: {
+        paddingHorizontal: 20,
+    },
+    header: {
+        width: '100%',
+        height: 200,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+    },
+    profileImage: {
+        width: 150,
+        height: 150,
+        resizeMode: 'cover',
+        borderRadius: 75,
+        borderWidth: 3,
+        borderColor: Colors.white,
+        position: 'absolute',
+        top: 25,
+        left: '28%',
+    },
     input: {
         paddingVertical: 5,
         paddingHorizontal: 12,
         borderWidth: 1,
         borderColor: Colors.zircon,
         borderRadius: 10,
+    },
+    inputText: {
+        fontSize: 18,
+        marginTop: 10,
+        marginBottom: 5,
+        marginLeft: 10,
+    },
+    submit:{
+        marginVertical: 30,
+        width: '30%',
+        borderWidth:1,
+        borderColor: Colors.zircon,
+        borderRadius: 10,
+        backgroundColor: Colors.charade,
+    },
+    submitText: {
+        fontSize: 16,
+        margin: 5,
+        color: Colors.white,
+        textAlign: 'center',
     },
 });
 
