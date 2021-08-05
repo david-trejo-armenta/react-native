@@ -4,24 +4,40 @@ import {
     Text,
     StyleSheet,
     ActivityIndicator,
+    StatusBar,
     FlatList,
     Alert,
 } from 'react-native'
 import BadgesItem from "./BadgesItem";
 import Colors from '../../res/Colors';
 import Http from '../../libs/http.js';
+import BadgesSearch from "./BadgesSearch";
 
 
 class BadgesScreen extends React.Component{
     state = {
         loading: false,
         badges: undefined,
+        badgesCopy: undefined,
     };
 
     componentDidMount() {
         this.fetchdata();
-        this.setFetchInterval();
+        this.focusEvent();
+        this.blurEvent();
     }
+
+    focusEvent = () => {
+        this.focusListener = this.props.navigation.addListener('focus', () => {
+            this.setFetchInterval();
+        });
+    };
+
+    blurEvent = () => {
+        this.blurListener = this.props.navigation.addListener('blur', () => {
+            clearInterval(this.interval);
+        });
+    };
 
     setFetchInterval = () =>{
         this.interval = setInterval(this.fetchdata, 3000);
@@ -31,16 +47,35 @@ class BadgesScreen extends React.Component{
         this.setState({loading: true});
         let response = await Http.instance.get_all();
         response = response.reverse();
-        this.setState({loading:false, badges: response});
+        this.setState({loading:false, badges: response, badgesCopy: response});
     };
 
     handlePress = item => {
         this.props.navigation.navigate('BadgesDetail', {item});
     };
 
+   
     handleEdit = item => {
         this.props.navigation.navigate('BadgesEdit', {item});
     }
+
+    handleChange = (query) => {
+        const {badgesCopy} = this.state;
+
+        const badgesFiltered = badgesCopy.filter(badge => {
+            return  badge.name.toLowerCase().includes(query.toLowerCase())
+        });
+
+        this.setState({badges: badgesFiltered});
+
+        if (query){
+            clearInterval(this.interbval);
+        } 
+        else{
+            this.setFetchInterval();
+        }
+        };
+
     handleDelete = item => {
         Alert.alert('Are you sure?', 
         `Do you really want to delete ${item.name}'s badge?\n\n This processcannot be reversed.`,
@@ -65,8 +100,9 @@ class BadgesScreen extends React.Component{
         );
     }
 
-    componentWillMount () {
-        clearInterval(this.interval);
+    componentWillUnmount () {
+       this.focusListener();
+       this.blurListener();
     }
 
 
@@ -85,8 +121,10 @@ class BadgesScreen extends React.Component{
             );
             
         }
-                return(
+        return(            
             <View style={[styles.container, styles.horizontal]}>
+            <StatusBar backgroundColor="Colors.black" translucent={false} />
+            <BadgesSearch onChange={this.handleChange} />
             <FlatList 
             style={styles.list} 
             data={badges} 
