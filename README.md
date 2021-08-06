@@ -81,6 +81,10 @@ The react native modules used to develop this application and it's versions can 
 
 To install these modules we simply write `npm install` followed by the Modules name in our cmd promt
 
+## Updates
+
+_None close to zero yet_
+
 ## Troubleshooting
 
 To troubleshoot this application we use the Metro console, and the messages sent byt he debugger mode which can be activated in the Phone emulator using Android Studio,
