@@ -1,4 +1,4 @@
-# react-native
+# React-native
 React native application, this application works with a Django API and a MongoDB API, the Django rest API manages the user sessions and information 
 and the MongoDB API stores, manages and edits a set of badges that display a structure of information.
 
