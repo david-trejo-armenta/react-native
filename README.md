@@ -1,8 +1,21 @@
 # React-native
+## Notice!
+This react native application is now developed to it's final version, any changes made in the future will be written in the Updates section.
 ![react-native](https://user-images.githubusercontent.com/71846731/128493547-15699e6a-4c17-428b-ae34-4b56883bc2b7.png)
-
+##Technologies
 React native application, this application works with a Django API and a MongoDB API, the Django rest API manages the user sessions and information 
 and the MongoDB API stores, manages and edits a set of badges that display a structure of information.
+
+|   Techology   |    Version    |
+| ------------- |:-------------:|
+|    React      |    17.0.1     |
+| React native  |    0.64.2     | 
+|    Django     |    3.2.4      |
+|     Flask     |    2.0.1      |
+|    MongoDB    |   3.11.4      |
+|  JavaScript   |ECMAScript 2021|
+
+
 
 ![Django](https://user-images.githubusercontent.com/71846731/128493719-611ea0e4-7e97-4b86-a0f8-6f20bb89e699.jpg)
 
