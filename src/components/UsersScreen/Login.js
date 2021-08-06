@@ -90,7 +90,7 @@ class Login extends React.Component {
                             <Text style={styles.inputText}>Username</Text>
                             <TextInput style={styles.input}
                                 placeholder={'Username'}
-                                keyboardAppearance="dark"
+                                placeholderTextColor="#80CBAB"
                                 onChangeText={text => {
                                     this.setState(prevState => {
                                         let form = Object.assign({}, prevState.form);
@@ -104,7 +104,7 @@ class Login extends React.Component {
                                 <TextInput style={style.input}
                                     secureTextEntry={isPasswordVisible}
                                     placeholder={'Password'}
-                                    keyboardAppearance="dark"
+                                    placeholderTextColor="#80CBAB"
                                     onChangeText={text => {
                                         this.setState(prevState => {
                                             let form = Object.assign({}, prevState.form);
@@ -145,6 +145,7 @@ class Login extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        margin: 1,
         flex: 1,
         backgroundColor: Colors.charade,
     },
@@ -196,8 +197,8 @@ const styles = StyleSheet.create({
         padding: 15,
         marginTop: 25,
         borderRadius: 15,
-        backgroundColor: '#121212cc',
-        borderColor: Colors.white,
+        backgroundColor: '#80CBAB',
+        borderColor: Colors.blackPearl,
         borderWidth: 1,
     },
     buttonText: {
@@ -205,7 +206,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         paddingHorizontal: 25,
-        color: Colors.white,
+        color: Colors.blackPearl,
     },
     Textbot: {
         color: Colors.white,
