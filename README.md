@@ -24,9 +24,25 @@ The react native modules used to develop this application and it's versions can 
 
 [package.json](./package.json)
 
-![Django](https://user-images.githubusercontent.com/71846731/128493719-611ea0e4-7e97-4b86-a0f8-6f20bb89e699.jpg)
+### Versions
 
-![mongoDB](https://user-images.githubusercontent.com/71846731/128493642-4e84532a-fb22-479b-b334-01dd81d1751f.png)
+| Modules                                        | Version      |
+| ---------------------------------------------- |:-------------:|
+|  @react-native-async-storage/async-storage     |   ^1.15.5     |
+|  @react-native-community/masked-view           |   ^0.1.11     |
+|  @react-navigation/bottom-tabs                 |   ^6.0.1      |
+|  @react-navigation/material-bottom-tabs        |   ^6.0.1      |
+|  @react-navigation/native                      |   ^6.0.1      |
+|  @react-navigation/stack                       |   ^6.0.1      |
+|  react                                         |   17.0.1      |
+|  react-native                                  |   0.64.2      |
+|  react-native-gesture-handler                  |   ^1.10.3     |
+|  react-native-image-picker                     |   ^4.0.6      |
+|  react-native-paper                            |   ^4.9.2      |
+|  react-native-reanimated                       |   ^2.2.0      |
+|  react-native-safe-area-context                |   ^3.2.0      |
+|  react-native-screens                          |   ^3.5.0      |
+|  react-native-vector-icons                     |   ^8.1.0      |
 
 
 The modules used in this application can be found in the package.json file in the main branch
