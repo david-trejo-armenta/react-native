@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, Touchable } from 'react-native'
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import UserSession from '../../libs/sessions';
 import Colors from '../../res/Colors';
@@ -10,9 +10,9 @@ class Profile extends React.Component {
         user: {
             profile: {},
         },
-        token: "",
-        picture: {},
-    }
+        token: '',
+        picture: '',
+    };
 
     componentDidMount = () => {
         this.getUserData();
@@ -25,36 +25,34 @@ class Profile extends React.Component {
     };
 
     handleChooseProfileImage = () => {
-        const options = {};
-        launchImageLibrary(options, response => {
+        const options = {
+            includeBase64: false,
+            mediaType: 'photo',
+        };
+
+    launchImageLibrary(options, response => {
+        if(!response.didCancel){
             let photo = response.assets[0].uri;
             this.setState({ picture: photo });
-        });
-        this.editProfilePicture();
-    };
-
-    editProfilePicture = () => {
-        const { user, token, picture } = this.state;
-        let uploadData = new FormData();
-        uploadData.append('file', {
-            type: 'image/jpg',
-            uri: picture,
-            name: 'profile.jpg',
-        });
-        try {
-            let response = UserSession.instance.editProfile(
-                user.id,
-                token,
-                uploadData,
-            );
-            console.log(response);
-        } catch (err) {
-            console.log('Edit profile picture error', err);
+            this.editProfilePicture();
         }
+        });
     };
 
+    editProfilePicture = async () => {
+        const { user, token, picture } = this.state;
+        
+        let response = await UserSession.instance.editProfile(
+            user.id,
+            token,
+            picture,
+        );
+        console.log(response);
+
+        };
+        
     render() {
-        const { user } = this.state;
+        const { user, picture } = this.state;
         return (
             <View style={styles.container}>
                 <Image
@@ -63,7 +61,7 @@ class Profile extends React.Component {
                 />
                 <Image
                     style={styles.profileImage}
-                    source={{ uri: `${user.profile.profile_picture}` }}
+                    source={{ uri: picture || `${user.profile.profile_picture}` }}
                 />
                 <TouchableOpacity
                     style={styles.profileEdit}
@@ -79,6 +77,20 @@ class Profile extends React.Component {
                     <Text style={styles.age}>{user.profile.age}</Text>
                 </View>
                 <Text style={styles.city}>{user.profile.city}</Text>
+
+                <Text style={styles.extra}>Your posts</Text>
+
+                <TouchableOpacity>
+                <Image 
+                style={styles.post}
+                source={require('../../assets/Berserk.jpg')}
+                />
+                </TouchableOpacity>
+                
+                <TouchableOpacity>
+                    <Text style={styles.city}>Show more</Text>
+                </TouchableOpacity>
+
                 <View style={styles.data}>
                 </View>
             </View>
@@ -134,6 +146,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: Colors.zircon,
     },
+    extra: {
+        fontSize: 26,
+        fontWeight: 'bold',
+        color: Colors.zircon,
+        left: 140,
+
+    },
+    post: {
+        marginTop: 20,
+        borderRadius: 30,
+        borderWidth: 5,
+        borderColor: Colors.charade,
+        height: 150,
+        width: 350,
+        left: 30,
+    },
+
     age: {
         fontSize: 28,
         marginLeft: 10,
