@@ -11,6 +11,7 @@ const BadgesTabNavigator = () => {
     return(
         <Tab.Navigator
             screenOptions={{
+                tabBarShowLabel: false,
                 headerShown: false,
                 headerStyle:{
                 backgroundColor: Colors.blackPearl,
@@ -21,7 +22,7 @@ const BadgesTabNavigator = () => {
         >
             
             <Tab.Screen 
-                name="Badges"
+                name="BadgesStack"
                 component={BadgesStack}
                 options={{
                 tabBarIcon: ({size, color}) => (
