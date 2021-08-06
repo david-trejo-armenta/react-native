@@ -86,14 +86,22 @@ class UserSession {
     };
 
     editProfile = async (id, token, body) => {
+        let uploadData = new FormData();
+        uploadData.append('profile.profile_picture', {
+            type: 'image/jpeg',
+            uri: body,
+            name: 'profile.jpg',
+        });
+
         try {
             let request = await fetch(`https://django-api-ex.herokuapp.com/profile/${id}/`, {
                 method: 'PATCH',
                 headers: {
+                    Accept: 'application/json',
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Token ${token}`,
                 },
-            body: body,
+                body: uploadData,
             });
             let response = await request.json();
             return response;
