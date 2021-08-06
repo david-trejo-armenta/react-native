@@ -1,10 +1,13 @@
 # React-native
 ## Notice!
 This react native application is now developed to it's final version, any changes made in the future will be written in the Updates section.
-![react-native](https://user-images.githubusercontent.com/71846731/128493547-15699e6a-4c17-428b-ae34-4b56883bc2b7.png)
-##Technologies
+
+## Technologies
+
 React native application, this application works with a Django API and a MongoDB API, the Django rest API manages the user sessions and information 
 and the MongoDB API stores, manages and edits a set of badges that display a structure of information.
+
+### Versions
 
 |   Techology   |    Version    |
 | ------------- |:-------------:|
@@ -15,7 +18,11 @@ and the MongoDB API stores, manages and edits a set of badges that display a str
 |    MongoDB    |   3.11.4      |
 |  JavaScript   |ECMAScript 2021|
 
+## Modules
 
+The react native modules used to develop this application and it's versions can be found in 
+
+[package.json](./package.json)
 
 ![Django](https://user-images.githubusercontent.com/71846731/128493719-611ea0e4-7e97-4b86-a0f8-6f20bb89e699.jpg)
 
