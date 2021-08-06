@@ -81,9 +81,30 @@ The react native modules used to develop this application and it's versions can 
 
 To install these modules we simply write `npm install` followed by the Modules name in our cmd promt
 
+## Troubleshooting
 
+To troubleshoot this application we use the Metro console, and the messages sent byt he debugger mode which can be activated in the Phone emulator using Android Studio,
+there has been written a number of `console.log(err);` statements around the code to simplify the process if you encounter any bug or issue related to this application you can send a message using this platform to me or any other future collaborators.
+
+## FAQs
+
+1. Why was this app developed? 
+As stated in the Functionality block, this application is an experimentation to further study the functionality of react native, it's modules and it's relation with multiple APIs
+
+2. Was this developed by a team"
+No it was developed by me and only me
+
+3. Has the development team has had enough sleep time?
+Yes
+
+4. Will this application will be furhter updated?
+Most likely not
+
+## Little known facts
 
 This Application was developed in the summer of 2021 during the pandemic.
+
+## Credits
 
 The images in the app were downloaded from Pexels and Icons8
 
