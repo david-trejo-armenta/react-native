@@ -23,7 +23,7 @@ const AppStack = () => {
             options ={{headerShown: false}}
             />
             <Stack.Screen 
-            name = "Badges" 
+            name = "BadgesTab" 
             component = {BadgesTabNavigator} 
             />
           
