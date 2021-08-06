@@ -8,6 +8,7 @@ import Colors from '../../res/Colors'
 
 const Stack = createStackNavigator();
 
+//Here we declare the screens we will handle in our navigator, we can include options and settings for each screen separately
 const AppStack = () => {
     return(
         <Stack.Navigator

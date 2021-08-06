@@ -10,6 +10,8 @@ import {
     import Colors from '../../res/Colors';
     const imageBackground = {uri: 'https://images.pexels.com/photos/2161954/pexels-photo-2161954.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'};
         
+//Landing page view, this is the first screen that is shown in the application, by clicking the Dive In button we continue to the 
+
 class BadgeLanding extends React.Component{
 
     handlePress = () => {

@@ -9,6 +9,8 @@ import {
 import Storage from '../../libs/storage'
 import Colors from '../../res/Colors'
 
+
+//In this code we structure the badges detail information that we fetch from our mongoDB API
 class BadgesDetail extends React.Component{
     state = {
         badge: {},
@@ -25,7 +27,8 @@ class BadgesDetail extends React.Component{
         };
         this.props.navigation.setOptions({title: item.name})
     };
-
+  // favorite button mechanisms
+  
     getFavorite = async () => {
         try{
             const key = `favorite-${this.state.badge._id}`;
@@ -38,6 +41,7 @@ class BadgesDetail extends React.Component{
         }
     };
 
+  
     toggleFavorite = () => {
         if(this.state.isFavorite){
             this.removeFavorite();
@@ -62,6 +66,8 @@ class BadgesDetail extends React.Component{
         await Storage.instance.remove(key);
         this.setState({isFavorite: false});
     }
+
+    //here it is the render to show the badges details information
 
     render(){
         const {badge, isFavorite} = this.state;

@@ -11,6 +11,8 @@ import {
 import Colors from '../../res/Colors'
 import Http from '../../libs/http'
 
+//Code to edit badges information, this uses a POST method brought from the http lib to perform this action.
+
 class BadgesEdit extends React.Component {
 
     state={
@@ -37,6 +39,8 @@ class BadgesEdit extends React.Component {
         this.props.navigation.replace('Badges')
     }
 
+     //view with the inputs and forms to perform the badges information update
+     
     render() {
 
         const {badge, loading} = this.state;

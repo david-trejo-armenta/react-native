@@ -72,6 +72,7 @@ class Profile extends React.Component {
                         source={require('../../assets/imagen.png')}
                     />
                 </TouchableOpacity>
+
                 <View style={styles.userInfo}>
                     <Text style={styles.name}>{user.first_name} {user.last_name}</Text>
                     <Text style={styles.age}>{user.profile.age}</Text>
