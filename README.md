@@ -89,16 +89,20 @@ there has been written a number of `console.log(err);` statements around the cod
 ## FAQs
 
 1. Why was this app developed? 
-As stated in the Functionality block, this application is an experimentation to further study the functionality of react native, it's modules and it's relation with multiple APIs
 
-2. Was this developed by a team"
-No it was developed by me and only me
+_As stated in the Functionality block, this application is an experimentation to further study the functionality of react native, it's modules and it's relation with multiple APIs_
+
+2. Was this developed by a team?
+
+_No it was developed by me and only me_
 
 3. Has the development team has had enough sleep time?
-Yes
+
+_Hmmyyess_
 
 4. Will this application will be furhter updated?
-Most likely not
+
+_Most likely not_
 
 ## Little known facts
 
