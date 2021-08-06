@@ -33,7 +33,7 @@ class BadgesEdit extends React.Component {
 
   handleSubmit = async () => {
     await Http.instance.put(this.state.badge._id, this.state.form);
-    this.props.navigation.replace('Badges');
+    this.props.navigation.replace('BadgesScreen');
   };
 
   //view with the inputs and forms to perform the badges information update

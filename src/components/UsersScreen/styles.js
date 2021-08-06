@@ -99,13 +99,15 @@ const style = StyleSheet.create({
   },
   errorContainer: {
     width: '70%',
+    top: 1,
+    left: 12,
     paddingHorizontal: 15,
     paddingVertical: 10,
-    backgroundColor: Colors.zircon,
+    backgroundColor: Colors.white,
     borderRadius: 5,
   },
   errorMsg: {
-    color: Colors.green,
+    color: Colors.blackPearl,
   },
   signUpTouchable: {
     display: 'flex',

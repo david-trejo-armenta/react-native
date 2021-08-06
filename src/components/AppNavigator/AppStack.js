@@ -37,11 +37,6 @@ const AppStack = () => {
         component={Signup}
         options={{headerShown: false}}
       />
-      <Stack.Screen
-        name="Badges"
-        component={BadgesStack}
-        options={{headerShown: false}}
-      />
     </Stack.Navigator>
   );
 };

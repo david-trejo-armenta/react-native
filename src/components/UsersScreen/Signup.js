@@ -107,7 +107,7 @@ class Signup extends React.Component {
                 <TextInput
                   style={styles.input}
                   placeholder={'Username'}
-                  keyboardAppearance="dark"
+                  placeholderTextColor="#80CBAB"
                   onChangeText={text => {
                     this.setState(prevState => {
                       let form = Object.assign({}, prevState.form);
@@ -121,7 +121,7 @@ class Signup extends React.Component {
                   style={styles.input}
                   placeholder={'Email'}
                   keyboardType="email-address"
-                  keyboardAppearance="dark"
+                  placeholderTextColor="#80CBAB"
                   onChangeText={text => {
                     this.setState(prevState => {
                       let form = Object.assign({}, prevState.form);
@@ -136,7 +136,7 @@ class Signup extends React.Component {
                     style={style.input}
                     secureTextEntry={IsPasswordVisible}
                     placeholder={'Password'}
-                    keyboardAppearance="dark"
+                    placeholderTextColor="#80CBAB"
                     onChangeText={text => {
                       this.setState(prevState => {
                         let form = Object.assign({}, prevState.form);
@@ -162,7 +162,7 @@ class Signup extends React.Component {
                     style={style.input}
                     secureTextEntry={isPasswordConfVisible}
                     placeholder={'Password Confirmation'}
-                    keyboardAppearance="dark"
+                    placeholderTextColor="#80CBAB"
                     onChangeText={text => {
                       this.setState(prevState => {
                         let form = Object.assign({}, prevState.form);
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     padding: 15,
     marginTop: 50,
     borderRadius: 15,
-    backgroundColor: '#121212cc',
+    backgroundColor: '#80CBAB',
     borderColor: Colors.white,
     borderWidth: 1,
   },
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     paddingHorizontal: 25,
-    color: Colors.white,
+    color: Colors.blackPearl,
   },
 });
 
