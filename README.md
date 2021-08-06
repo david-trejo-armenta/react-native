@@ -1,6 +1,12 @@
 # React-native
-## Notice!
+#### Notice!
 This react native application is now developed to it's final version, any changes made in the future will be written in the Updates section.
+
+This Application was created using the React Native framework which can be used once we have installed node.js by using the commands `npm`
+
+To start a React Native project we simply run the following command in our command prompt:
+
+`npx react-native init <project's name>`
 
 ## Technologies
 
@@ -44,12 +50,10 @@ The react native modules used to develop this application and it's versions can 
 |  react-native-screens                          |   ^3.5.0      |
 |  react-native-vector-icons                     |   ^8.1.0      |
 
+#### Notice!
 
-The modules used in this application can be found in the package.json file in the main branch
-The data inserted in the APIs was created with the aid of the Insomnia tool
+To install these modules we simply write `npm install` followed by the Modules name in our cmd promt
 
-This application was created using node.js
-In order to run it we need to download or clon the repo and then run the comand npm install to install the modules in the projects settings.
 
 The images in the app were downloaded from Pexels and Icons8
 
