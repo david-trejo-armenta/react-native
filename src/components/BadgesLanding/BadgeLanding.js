@@ -13,7 +13,7 @@ import {
 class BadgeLanding extends React.Component{
 
     handlePress = () => {
-      this.props.navigation.replace('BadgesTab');
+      this.props.navigation.replace('Login');
     };
 
 
