@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     },
     userInfo:{
         flexDirection: 'row',
-        marginTop: 110,
+        marginTop: 115,
         justifyContent: 'center',            
     },
     name: {
