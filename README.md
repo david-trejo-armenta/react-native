@@ -2,11 +2,38 @@
 #### Notice!
 This react native application is now developed to it's final version, any changes made in the future will be written in the Updates section.
 
+## Functionality
+
+This React Native appplication shows a number of examples on how to manage data inside of a mobile application using different technologies such as a nosql database created using flask and hosted in a mongoDB server, a Django REST API which serves as a user management tool, this enables the user to create profiles, log in and even have it's own local storage space. The interface is designed in a minimalistic maner and it's intended to work primarily as an example on how to manage, present and understand data in the future. 
+
+## Requirements
+1. Android Studio
+2. An Android Emulator
+3. Node JS correctly Installed
+4. Git installed
+5. Check the docs to make sure all the modules are correctly installed
+
 This Application was created using the React Native framework which can be used once we have installed node.js by using the commands `npm`
 
 To start a React Native project we simply run the following command in our command prompt:
 
 `npx react-native init <project's name>`
+
+
+## Quick start
+First we need to clone this repo by using the following command inside of our desired folder:
+
+`git clone origin https://github.com/david-trejo-armenta/react-native.git`
+
+Then we make sure all the files were cloned correctly to our local repository and enter the following command:
+
+`npm install`
+
+This will install all of the dependecies and modules neede by the application to start.
+To initialize our android application we simply go to our cmd prompt and enter the following command:
+
+
+`npm run android`
 
 ## Technologies
 
@@ -55,8 +82,12 @@ The react native modules used to develop this application and it's versions can 
 To install these modules we simply write `npm install` followed by the Modules name in our cmd promt
 
 
+
+This Application was developed in the summer of 2021 during the pandemic.
+
 The images in the app were downloaded from Pexels and Icons8
 
-The color palette can be found in the file Colors in the following path
-Badges/src/res/Colors.js
+The color palette can be found in the file Colors in the following file
+
+[Colors.js](./src/res/Colors.js)
 
