@@ -86,6 +86,7 @@ class BadgesDetail extends React.Component{
                             ? require('../../assets/ishuevo.png')
                             : require('../../assets/nothuevo.png')
                         }
+                    style={styles.huevo}
                 />
                 </TouchableOpacity>
                 <View style={styles.userInfo}>
@@ -145,8 +146,8 @@ const styles = StyleSheet.create({
     },
     favorite:{
         position: 'absolute',
-        top: 295,
-        right: 10,
+        top: 320,
+        right: 30,
     },
     userInfo:{
         flexDirection: 'row',
@@ -191,7 +192,11 @@ const styles = StyleSheet.create({
     },
     smallText: {
         color: Colors.zircon,
-    }
+    },
+    huevo: {
+        width: 50,
+        height: 50,
+    },
     });
 
 export default BadgesDetail;
