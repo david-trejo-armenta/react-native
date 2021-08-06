@@ -21,7 +21,7 @@ return(
             headerTintColor: Colors.white,
         }}>
             <Stack.Screen 
-            name="Badges" 
+            name="BadgesScreen" 
             component={BadgesScreen} 
             />
             <Stack.Screen 
