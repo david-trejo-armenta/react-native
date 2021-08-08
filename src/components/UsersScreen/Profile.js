@@ -19,10 +19,13 @@ class Profile extends React.Component {
     token: '',
     picture: '',
   };
-
+    //    This method mounts the getUserData
   componentDidMount = () => {
     this.getUserData();
   };
+    //    This method goes to the Django API and fetches the users information \
+    //    to be shown in the view thi takes the locally stored token and username to 
+    //    achieve it
 
   getUserData = async () => {
     let user = await UserSession.instance.getUser();
@@ -30,12 +33,16 @@ class Profile extends React.Component {
     this.setState({user: user, token: token});
   };
 
+  //      This method will let the user chose an image for his profile
+  //      this method is called and sends the user to either chose an
+  //      image from the local storage or even take a new photo
+
   handleChooseProfileImage = () => {
     const options = {
       includeBase64: false,
       mediaType: 'photo',
     };
-
+  
     launchImageLibrary(options, response => {
       if (!response.didCancel) {
         let photo = response.assets[0].uri;
@@ -44,6 +51,9 @@ class Profile extends React.Component {
       }
     });
   };
+
+  //      This method will save and change the profile 
+  //      picture and save it as a the user's new image
 
   editProfilePicture = async () => {
     const {user, token, picture} = this.state;
@@ -103,6 +113,8 @@ class Profile extends React.Component {
     );
   }
 }
+
+//      Styles   kok
 
 const styles = StyleSheet.create({
   container: {

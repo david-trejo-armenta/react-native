@@ -29,6 +29,11 @@ class Signup extends React.Component {
     form: {},
   };
 
+
+  //    It calls the Django's API signup function in the UserSession, 
+  //    to create a new account and and handle the errors related
+  //    to this process
+
   handleSubmit = async () => {
     try {
       this.setState({loading: true, user: undefined});
@@ -71,6 +76,8 @@ class Signup extends React.Component {
     }
   };
 
+  //    This method handles the password visible 
+
   ToggleIsPasswordVisible = () => {
     if (this.state.IsPasswordVisible) {
       this.setState({IsPasswordVisible: false});
@@ -78,6 +85,9 @@ class Signup extends React.Component {
       this.setState({IsPasswordVisible: true});
     }
   };
+
+  //    This method will change the satus in the password visible
+  //    icon, this will turn the eye green
 
   ToggleIsPasswordConfVisible = () => {
     if (this.state.isPasswordConfVisible) {
@@ -101,7 +111,7 @@ class Signup extends React.Component {
               <View style={styles.signupBack}>
                 <Text style={styles.signup}>Sign Up</Text>
                 {errors ? (
-                  <View style={styles.errorContainer}>{errors}</View>
+                  <View style={styles.errorMsg2}>{errors}</View>
                 ) : null}
                 <Text style={styles.inputText}>Username</Text>
                 <TextInput
@@ -195,6 +205,8 @@ class Signup extends React.Component {
     );
   }
 }
+
+  //    Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -254,6 +266,11 @@ const styles = StyleSheet.create({
     color: Colors.white,
     marginBottom: 5,
     marginLeft: 10,
+  },
+  errorMsg2: {
+    color: Colors.white,
+    backgroundColor: Colors.white,
+    borderRadius: 5,
   },
   submit: {
     marginVertical: 30,

@@ -14,11 +14,15 @@ const imageBackground = {
 
 //Landing page view, this is the first screen that is shown in the application, by clicking the Dive In button we continue to the
 
+
+//     This methods sends the user to the Login page
 class BadgeLanding extends React.Component {
   handlePress = () => {
     this.props.navigation.replace('Login');
   };
 
+  //      Render with the Badges Landing page, 
+  //      this is the first page shown in the app
   render() {
     return (
       <View style={styles.container}>
@@ -37,6 +41,8 @@ class BadgeLanding extends React.Component {
     );
   }
 }
+
+//         Styles
 
 const styles = StyleSheet.create({
   container: {

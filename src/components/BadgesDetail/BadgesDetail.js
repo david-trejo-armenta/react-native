@@ -3,16 +3,21 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Storage from '../../libs/storage';
 import Colors from '../../res/Colors';
 
-//In this code we structure the badges detail information that we fetch from our mongoDB API
+//              In this code we structure the badges detail information 
+//              that we fetch from our mongoDB API
 class BadgesDetail extends React.Component {
   state = {
     badge: {},
   };
 
+  //            This method "componentDidMount" creates an object with 
+  //            the getBadge information that is stated right below
   componentDidMount() {
     this.getBadge();
   }
 
+  //             This method gets the badge information 
+  //            which contains the user's information
   getBadge = () => {
     const {item} = this.props.route.params;
     this.setState({badge: item}),
@@ -21,8 +26,9 @@ class BadgesDetail extends React.Component {
       };
     this.props.navigation.setOptions({title: item.name});
   };
-  // favorite button mechanisms
-
+  //            Favorite button mechanisms
+  //            This method gathers the favorite badges 
+  //            from the local storage "Storage"
   getFavorite = async () => {
     try {
       const key = `favorite-${this.state.badge._id}`;
@@ -35,6 +41,8 @@ class BadgesDetail extends React.Component {
     }
   };
 
+  //        This method will interact with the button on the badge details, 
+  //        once is clicked we can call either the add or remove favorite methods
   toggleFavorite = () => {
     if (this.state.isFavorite) {
       this.removeFavorite();
@@ -42,7 +50,10 @@ class BadgesDetail extends React.Component {
       this.addFavorite();
     }
   };
-
+  
+  //        This method gathers the badge information
+  //        and adds it to the local Storage, this will
+  //        change the info shown in the Favorite tab
   addFavorite = async () => {
     const badge = JSON.stringify(this.state.badge);
     const key = `favorite-${this.state.badge._id}`;
@@ -54,13 +65,16 @@ class BadgesDetail extends React.Component {
     }
   };
 
+  //        This method gathers the badge information
+  //        and removes it to the local Storage, this will
+  //        change the info shown in the Favorite tab
   removeFavorite = async () => {
     const key = `favorite-${this.state.badge._id}`;
     await Storage.instance.remove(key);
     this.setState({isFavorite: false});
   };
 
-  //here it is the render to show the badges details information
+  //         Here it is the render to show the badges details information
 
   render() {
     const {badge, isFavorite} = this.state;
@@ -112,6 +126,7 @@ class BadgesDetail extends React.Component {
   }
 }
 
+//    Styles >.>
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -50,6 +50,7 @@ class BadgesItem extends React.Component {
   }
 }
 
+  //   Styles U.U
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',

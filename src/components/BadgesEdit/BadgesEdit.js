@@ -21,9 +21,14 @@ class BadgesEdit extends React.Component {
     form: {},
   };
 
+  //            This method "componentDidMount" creates an object with 
+  //            the getBadge information that is stated right below
   componentDidMount() {
     this.getBadge();
   }
+
+  //             This method gets the badge information 
+  //            which contains the user's information
 
   getBadge = () => {
     const {item} = this.props.route.params;
@@ -31,6 +36,9 @@ class BadgesEdit extends React.Component {
     this.props.navigation.setOptions({title: item.name});
   };
 
+  //       Thist method calls the Http api which gets a
+  //       put request along with the badge's information
+  //       which gets sent to the MongoDB Api
   handleSubmit = async () => {
     await Http.instance.put(this.state.badge._id, this.state.form);
     this.props.navigation.replace('BadgesScreen');
@@ -146,6 +154,8 @@ class BadgesEdit extends React.Component {
     );
   }
 }
+
+ //     Styles U.U
 
 const styles = StyleSheet.create({
   container: {

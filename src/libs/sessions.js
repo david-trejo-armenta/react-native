@@ -6,7 +6,7 @@ class UserSession {
   login = async body => {
     try {
       let request = await fetch(
-        `https://django-api-ex.herokuapp.com/users/login/`,
+        `https://djangoapi-native.herokuapp.com/users/login/`,
         {
           method: 'POST',
           headers: {
@@ -49,7 +49,7 @@ class UserSession {
   signup = async body => {
     try {
       let request = await fetch(
-        `https://django-api-ex.herokuapp.com/users/signup/`,
+        `https://djangoapi-native.herokuapp.com/users/signup/`,
         {
           method: 'POST',
           headers: {
@@ -101,7 +101,7 @@ class UserSession {
 
     try {
       let request = await fetch(
-        `https://django-api-ex.herokuapp.com/profile/${id}/`,
+        `https://djangoapi-native.herokuapp.com/profile/${id}/`,
         {
           method: 'PATCH',
           headers: {

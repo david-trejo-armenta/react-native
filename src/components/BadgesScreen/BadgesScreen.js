@@ -20,11 +20,17 @@ class BadgesScreen extends React.Component {
     badgesCopy: undefined,
   };
 
+  //      This method creates three objects, 
+  //      the fetchdata, the focus event and the blur event
+
   componentDidMount() {
     this.fetchdata();
     this.focusEvent();
     this.blurEvent();
   }
+
+   //       This method focus the screen when we click
+   //       a badge or edit or remove
 
   focusEvent = () => {
     this.focusListener = this.props.navigation.addListener('focus', () => {
@@ -32,15 +38,25 @@ class BadgesScreen extends React.Component {
     });
   };
 
+   //       This method blurs the screen when we click
+   //       a badge or edit
+
   blurEvent = () => {
     this.blurListener = this.props.navigation.addListener('blur', () => {
       clearInterval(this.interval);
     });
   };
 
+  //       Sets a 3 second interval to reload
+  //       the fetch method which gathers the information
+  //       from the database
+
   setFetchInterval = () => {
     this.interval = setInterval(this.fetchdata, 3000);
   };
+
+  //     This methods fetchs the badges from 
+  //     the database
 
   fetchdata = async () => {
     this.setState({loading: true});
@@ -49,13 +65,22 @@ class BadgesScreen extends React.Component {
     this.setState({loading: false, badges: response, badgesCopy: response});
   };
 
+  //     This method sends the user to the Badges Detail
+  //     screen when clicking this method
+
   handlePress = item => {
     this.props.navigation.navigate('BadgesDetail', {item});
   };
-
+  
+  //     This method sends the user to the Badges Edit
+  //     screen when clicking this method
   handleEdit = item => {
     this.props.navigation.navigate('BadgesEdit', {item});
   };
+
+  //      This method filters the information if the badges
+  //      by entering letters, this will show us only the badges
+  //      that have the same info that was entered in the form
 
   handleChange = query => {
     const {badgesCopy} = this.state;
@@ -72,6 +97,12 @@ class BadgesScreen extends React.Component {
       this.setFetchInterval();
     }
   };
+
+  //      This method shows the modal that is shown when we \
+  //      click the delete option in the badges screen, this will
+  //      call the Api using the Https to remove an item from the 
+  //      database
+
 
   handleDelete = item => {
     Alert.alert(
@@ -97,6 +128,11 @@ class BadgesScreen extends React.Component {
       },
     );
   };
+
+  //      This method will unmount the components when we are done working
+  //      with this method we will save a lot of 
+  //      the phone's resources by only performing what's
+  //      needed
 
   componentWillUnmount() {
     this.focusListener();
@@ -140,6 +176,7 @@ class BadgesScreen extends React.Component {
   }
 }
 
+//    Styles   u.u
 const styles = StyleSheet.create({
   container: {
     flex: 1,

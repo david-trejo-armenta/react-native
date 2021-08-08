@@ -7,6 +7,9 @@ class BadgesSearch extends React.Component {
     query: '',
   };
 
+  //      This method habdles the data input in 
+  //      the form to search for the badges
+
   handleText = query => {
     this.setState({query});
     if (this.props.onChange) {
@@ -28,6 +31,8 @@ class BadgesSearch extends React.Component {
     );
   }
 }
+
+//   Styles    n.n
 
 const styles = StyleSheet.create({
   container: {

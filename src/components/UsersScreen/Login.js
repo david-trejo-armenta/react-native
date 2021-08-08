@@ -26,13 +26,22 @@ class Login extends React.Component {
     form: {},
   };
 
+  //      This will mount the deleteTokens method 
+  //      
+
   componentDidMount = () => {
     this.deleteTokens();
   };
 
+  //      This calls the logout function from the User Session file
+  //      deletes the tokens stored when loggin in
+
   deleteTokens = async () => {
     await UserSession.instance.logout();
   };
+
+  //      This method handles the login function to log the user, 
+  //      also checks for errors in the login process, data types or data
 
   handleSubmit = async () => {
     try {
@@ -57,6 +66,8 @@ class Login extends React.Component {
     }
   };
 
+  //    This method will change if the password is visible 
+
   toggleIsPasswordVisible = () => {
     if (this.state.isPasswordVisible) {
       this.setState({isPasswordVisible: false});
@@ -65,9 +76,13 @@ class Login extends React.Component {
     }
   };
 
+  //    This method will send the user to the signup page if he or she 
+  //    doesn't have an account created yet
   handleSignUp = async () => {
     this.props.navigation.navigate('Signup');
   };
+
+  //    Render 
 
   render() {
     const {isPasswordVisible, loading, error} = this.state;
@@ -138,7 +153,7 @@ class Login extends React.Component {
     );
   }
 }
-
+    //     Styles     joj
 const styles = StyleSheet.create({
   container: {
     margin: 1,
